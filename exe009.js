@@ -1,5 +1,5 @@
 /*
-    What does 'result1 evaluate to? Youomight want to review the previous lesson for this one.
+    What does 'result1 evaluate to? You might want to review the previous lesson for this one.
 */
 
 const myObj = {
