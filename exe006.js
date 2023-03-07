@@ -2,6 +2,7 @@
  */
 
 // this code doesn't work because we declare a variable using 'const' that is dont allow us to reassign a value to the variable.
+
 /*
 const numberVariable = 0;
 
