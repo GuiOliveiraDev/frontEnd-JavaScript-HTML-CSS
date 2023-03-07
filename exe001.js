@@ -6,13 +6,14 @@ const firstNumber = 20;
 
 let secondNumber = 40;
 
-secondNumber = 80
-
-const sumNumbers = firstNumber + secondNumber
+secondNumber = 80;
 
 const myArray = [myBoolean, myString]
 
-const myObject = { firstProperty: myArray, sumProperty: sumNumbers,}
+const myObject = { 
+    firstProperty: myArray, 
+    sumProperty: firstNumber + secondNumber,
+};
 
 console.log(myObject)
 
