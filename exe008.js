@@ -17,4 +17,4 @@ console.log(expression5);
 // The same result in one line!
 const expression = !(100 % 50 < 100 / 50) && (300 + 5 === 305);
 
-console.log(expression) 
+console.log(expression)
