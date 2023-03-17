@@ -3,7 +3,15 @@
  * prior to generating new random content
  */
 function clearAll() {
-    
+    const meme = document.querySelector('.meme-content')
+    const joke = document.querySelector('.jokes-content')
+    const quote = document.querySelector('.quote-content')
+    const riddle = document.querySelector('.riddle-content')
+
+    meme.innerHTML = ''
+    joke.innerHTML = ''
+    quote.innerHTML = ''
+    riddle.innerHTML = ''
 }
 
 /**
@@ -18,11 +26,8 @@ function showMeme() {
   const container = document.querySelector('.meme-content')
   const newElement = document.createElement('img')
   newElement.setAttribute('src',randomMemeUrl)
-  const hasImg = container.querySelector('img')
-  
-  if (hasImg){
-    container.querySelector('img').remove();
-  }
+
+  clearAll()
   container.appendChild(newElement)
 }
 /**
@@ -33,6 +38,13 @@ function showMeme() {
 function showJoke() {
   // Value is a string representing the joke
   const randomJokeText = getRandomData("jokes");
+  const newElement = document.createElement('p')
+  
+  newElement.textContent = randomJokeText
+  
+  clearAll()
+
+  document.querySelector('.jokes-content').appendChild(newElement)
 
 }
 
@@ -44,17 +56,42 @@ function showJoke() {
 function showQuote() {
   // Value should be in format: { quote: '', author: '' }
   const randomQuote = getRandomData("quotes");
+
+  const quote = document.createElement('p')
+  const author = document.createElement('p')
+  quote.textContent = randomQuote.quote
+  author.textContent = '- ' + randomQuote.author
+
+  const container = document.querySelector('.quote-content')
+  
+  clearAll()
+
+  container.appendChild(quote)
+  container.appendChild(author)
 }
 
-/**
- * TODO:
- * - Show a random riddle in the correct location
- * - Never show more than 1 riddle at a time
- * - Always hide the riddle's answer initially
- */
+
 function showRiddle() {
   // Value should be in format: { question: '', answer: '' }
   const randomRiddle = getRandomData("riddles");
+
+  const {question, answer} = randomRiddle
+
+  const container = document.querySelector('.riddle-content')
+
+  const questionElement = document.createElement('p')
+  questionElement.textContent = question
+
+  const answerElement = document.createElement('p')
+  answerElement.textContent = 'The answer is: ' + answer
+  answerElement.setAttribute('id','riddle-answer')
+  answerElement.hidden = true
+
+  clearAll()
+
+  container.appendChild(questionElement)
+  container.appendChild(answerElement)
+
 }
 
 /**
@@ -64,7 +101,19 @@ function showRiddle() {
  *   that the answer is already revealed
  * - If there is a riddle shown but no answer, unhide the answer!
  */
-function revealAnswers() {}
+function revealAnswers() {
+  const riddleContainer = document.querySelector('.riddle-content')
+  const riddle = riddleContainer.querySelector('p')
+  const answer = document.querySelector('#riddle-answer')
+  if (riddle && answer.hidden){
+    answer.hidden = false
+  } else if (riddle && !answer.hidden) {
+    alert('The answer was already revealed')
+  } else {
+    alert('There is no riddle')
+  }
+
+}
 
 /**
  * This function is used to get random data.  Don't worry about how it works, just know how to use it.  Usage is pre-filled in the functions above already, but here's an explanation of the function anyways.
