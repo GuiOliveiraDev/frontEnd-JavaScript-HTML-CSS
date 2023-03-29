@@ -1,3 +1,7 @@
+/*
+html{
+    font-size: 16px;
+}
 h2 {
     border: 1px solid black;
     margin: 0px;
@@ -33,6 +37,7 @@ nav {
     position: relative;
     width: 500px;
     top: 10px;
+    font-size: 24px;
 }
 #abs-position {
     position: absolute;
@@ -41,5 +46,14 @@ nav {
     background-color: orange;
     top: 0px;
     left: 0px;
-    font-size: 18px;
+    font-size: 1em;
+}
+*/
+html {
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 16px;
+}
+
+p {
+    color: red;
 }
