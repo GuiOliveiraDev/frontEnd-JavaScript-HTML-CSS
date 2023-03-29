@@ -1,14 +1,45 @@
-button {
-    background-color: navy;
-    color: white;
-    border: none;
-    padding: 20px;
+h2 {
+    border: 1px solid black;
+    margin: 0px;
+    line-height: 60px;
+    padding-left: 10px;
 }
 
-button:hover {
-    cursor: pointer;
-    opacity: 0.9;
+body {
+    margin: 0;
 }
-button:active {
-    margin-top: 1px;
+
+nav {
+    background-color: yellowgreen;
+    height: 60px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+#box {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    margin: 20px;
+}
+
+#boxes {
+    margin-top: 80px;
+}
+
+#boxes .rel-position {
+    position: relative;
+    width: 500px;
+    top: 10px;
+}
+#abs-position {
+    position: absolute;
+    width: 80%;
+    height: 20px;
+    background-color: orange;
+    top: 0px;
+    left: 0px;
+    font-size: 18px;
 }
