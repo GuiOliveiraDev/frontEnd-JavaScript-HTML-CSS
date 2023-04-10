@@ -21,6 +21,8 @@ body {
 
 #testimonial-1 {
     background-color: #7541c8;
+    position: relative;
+    z-index: 2;
 }
 
 #testimonial-2 {
@@ -44,13 +46,15 @@ body {
 }
 
 .grid-item p {
-    opacity: 70%  ;
+    opacity: 70% ;
 }
 
 .header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 3;
 }
 .header-txt p {
     opacity: 50%;
@@ -58,15 +62,25 @@ body {
 
 .header-txt .name {
     opacity: 100%;
+    font-size: 1rem ;
 }
 .header img {
     border-radius: 50%;
     margin-right: 10px;
+    border: 1px solid #7541c8;
 }
 
 .grid-item h4 {
     margin-bottom: 20px;
     font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#quote {
+    position: absolute;
+    right: 15%;
+    top: 0;
+    z-index: 1;
 }
 
 @media (min-width: 576px) {
@@ -81,17 +95,17 @@ body {
     }
 
     #testimonial-grid-container {
-        max-width: 900px;
+        max-width: 1440px;
         margin: 0 auto;
     }
 
     #testimonial-5 {
-        flex-basis: 25%;
+        flex-basis: 20%;
     }
 
     #main-left {
         flex-direction: column;
-        flex-basis: 75%;
+        flex-basis: 80%;
     }
 
 
